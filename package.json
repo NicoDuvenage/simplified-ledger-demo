@@ -1,0 +1,40 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "knex": "--knexfile ./knex.js"
+  },
+  "scripts": {
+    "start": "node src/server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "migrate": "run-s migrate:latest",
+    "migrate:latest": "knex $npm_package_config_knex migrate:latest",
+    "migrate:create": "knex migrate:make $npm_package_config_knex",
+    "migrate:rollback": "knex migrate:rollback $npm_package_config_knex",
+    "migrate:current": "knex migrate:currentVersion $npm_package_config_knex"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "Rajiv Mothilal rajivmothilal@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@mojaloop/central-services-database": "^3.1.0-snapshot",
+    "blipp": "3.0.0",
+    "glob": "^7.1.3",
+    "good": "8.1.1",
+    "hapi": "17.6.0",
+    "hapi-swagger": "^9.1.2",
+    "inert": "5.1.0",
+    "knex": "0.15.2",
+    "mysql": "^2.16.0",
+    "npm-run-all": "^4.1.3",
+    "rc": "^1.2.8",
+    "sinon": "^7.0.0",
+    "tape": "^4.9.1",
+    "tapes": "^4.1.0",
+    "vision": "^5.4.0"
+  }
+}
